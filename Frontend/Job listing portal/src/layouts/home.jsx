@@ -1,9 +1,9 @@
-import React  from "react";
+import Navbarcomponent from "../components/Navbarcomponent"
 
-export default function home(){
+export default function Home(){
     return (
         <>
-        
+    <Navbarcomponent/>
         </>
     )
 }
