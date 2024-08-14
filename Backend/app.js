@@ -1,8 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const loginRoute = require('./routes/loginRoute'); // Import your login route
-
+const cors =require('cors')
 const app = express();
+app.use(cors());
 const port = 3000;
 
 // Connect to MongoDB
