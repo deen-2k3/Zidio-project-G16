@@ -1,26 +1,28 @@
-const express = require('express');
+const express = require("express");
 const mongoose = require('mongoose');
-const loginRoute = require('./routes/loginRoute'); // Import your login route
-const cors =require('cors')
+const cors = require("cors");
+const userRoutes = require('./routes/userRoutes');
+const hostRoutes = require('./routes/hostRoutes');
+
 const app = express();
+app.use(express.json());
 app.use(cors());
-const port = 3000;
 
-// Connect to MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/JobPortal', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+mongoose.connect("mongodb://127.0.0.1:27017/JobPortal", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 })
-.then(() => console.log('Connected to MongoDB'))
-.catch(err => console.error('Could not connect to MongoDB...', err));
+  .then(() => {
+    console.log("Connected to MongoDB");
+    const PORT = 3001;
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error("Error connecting to MongoDB:", err.message);
+  });
 
-// Basic route
-app.get('/', (req, res) => {
-    res.send('Hello, World!');
-});
-app.use('/register',loginRoute);
-
-// Start the server
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
+// Use the user routes
+app.use('/users', userRoutes);
+app.use('/host',hostRoutes);
