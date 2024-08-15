@@ -1,0 +1,56 @@
+/* Center the form on the page */
+.login-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f8f9fa; /* Light grey background */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Style the form labels */
+.login-form label {
+  font-weight: bold;
+  color: #495057; /* Dark grey color for text */
+}
+
+/* Style the input fields */
+.login-form input {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #ced4da; /* Light border */
+  border-radius: 4px;
+}
+
+/* Style the submit button */
+.login-form button[type="submit"] {
+  background-color: #007bff; /* Bootstrap primary color */
+  border: none;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+/* Change button color on hover */
+.login-form button[type="submit"]:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Add some spacing below the header */
+.login-form h2 {
+  margin-bottom: 2rem;
+  color: #007bff; /* Match button color */
+  text-align: center;
+}
+
+/* Style the container */
+.container {
+  margin-top: 5rem;
+}
+
+/* Optional: Additional styling for disabled state */
+fieldset[disabled] .form-control {
+  background-color: #e9ecef;
+  opacity: 1; /* Override default opacity for better readability */
+}

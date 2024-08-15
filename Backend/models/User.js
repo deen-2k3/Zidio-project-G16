@@ -1,19 +1,19 @@
 const mongoose = require('mongoose');
 
-// Define the Login schema
-const loginSchema = new mongoose.Schema({
+// Define the User schema
+const userSchema = new mongoose.Schema({
     username: {
         type: String,
-        required: true,  // Fixed typo here
+        required: true,
         unique: true,
-        trim: true
+        trim: true,
     },
     email: {
         type: String,
-        required: true,  // Fixed typo here
+        required: true,
         unique: true,
         trim: true,
-        lowercase: true
+        lowercase: true,
     },
     password: {
         type: String,
@@ -23,7 +23,7 @@ const loginSchema = new mongoose.Schema({
     timestamps: true, // Automatically manage createdAt and updatedAt fields
 });
 
-// Create the Login model
-const Login = mongoose.model('Login', loginSchema);
+// Create the User model
+const User = mongoose.model('User', userSchema);
 
-module.exports = Login;
+module.exports = User;
