@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const userRoutes = require('./routes/userRoutes');
 const hostRoutes = require('./routes/hostRoutes');
+const jobApplyRoutes=require('./routes/jobApplyRoutes')
 
 const app = express();
 app.use(express.json());
@@ -26,3 +27,4 @@ mongoose.connect('mongodb://127.0.0.1:27017/JobPortal', {
 // Use the user routes
 app.use('/users', userRoutes);
 app.use('/host', hostRoutes);
+app.use('/jobapplies',jobApplyRoutes);

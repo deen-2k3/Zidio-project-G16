@@ -1,0 +1,40 @@
+/* Navbar Styling */
+.navbar {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 0.75rem 1rem; /* Padding around the navbar */
+    border-bottom: 1px solid #dee2e6; /* Light border at the bottom */
+}
+
+/* Brand Styling */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #000; /* Black text */
+}
+
+/* Nav Links Styling */
+.nav-link {
+    color: #495057; /* Darker gray text */
+    margin-right: 1rem; /* Space between links */
+}
+
+.nav-link:hover {
+    color: #007bff; /* Blue text on hover */
+}
+
+/* Search Form Styling */
+.form-control {
+    border-radius: 0.25rem; /* Rounded corners */
+    border: 1px solid #ced4da; /* Light border */
+}
+
+.button {
+    border-radius: 0.25rem; /* Rounded corners */
+    width: 150px; /* Increase button width */
+}
+
+/* Center the Search Form */
+.mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}

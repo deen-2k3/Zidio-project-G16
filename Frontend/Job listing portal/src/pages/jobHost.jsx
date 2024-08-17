@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-
+import '../jobhost.css'
 export default function JobHost() {
   const [image, setImage] = useState('');
   const [companyName, setCompanyName] = useState('');

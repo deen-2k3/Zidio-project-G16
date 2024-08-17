@@ -1,26 +1,31 @@
-import React from 'react'
+import React from 'react';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-export default function Jobcard() {
+import Button from 'react-bootstrap/Button';
+import '../Jobcard.css'; // Import the CSS file
+
+export default function JobCard({ job }) {
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+    <Card className="card" style={{ width: '22rem' }}>
+      <Card.Img variant="top" src={job.imgurl} alt={job.companyName} className="card-img-top" />
+      <Card.Body className="card-body">
+        <Card.Title className="card-title">{job.companyName}</Card.Title>
+        <Card.Subtitle className="card-subtitle mb-2 text-muted">{job.role}</Card.Subtitle>
+        <Card.Text className="card-text">
+          Duration: {job.duration}
+          <br />
+          CTC: {job.ctc}
         </Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
-        <ListGroup.Item>Cras justo odio</ListGroup.Item>
-        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+        <ListGroup.Item className="list-group-item">Company: {job.companyName}</ListGroup.Item>
+        <ListGroup.Item className="list-group-item">Role: {job.role}</ListGroup.Item>
+        <ListGroup.Item className="list-group-item">Duration: {job.duration}</ListGroup.Item>
+        <ListGroup.Item className="list-group-item">CTC: {job.ctc}</ListGroup.Item>
       </ListGroup>
-      <Card.Body>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
+      <Card.Body className="card-body">
+        <Button variant="primary" href="#">Apply Now</Button>
       </Card.Body>
     </Card>
-  )
+  );
 }
