@@ -3,15 +3,21 @@ import axios from 'axios';
 import { Form, Button, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap is imported
 import '../login.css'; // Import custom styles
+import { useNavigate } from 'react-router-dom';
+
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate(); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('http://localhost:3001/users/login', { email, password })
-      .then(result => console.log(result))
+      .then(result => {console.log(result)
+    
+    navigate('/')})
+
       .catch(err => console.log(err));
   };
 
