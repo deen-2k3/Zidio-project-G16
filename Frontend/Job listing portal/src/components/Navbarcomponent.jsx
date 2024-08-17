@@ -3,7 +3,8 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import '../Navbarcomponent.css';
+
 import { LinkContainer } from 'react-router-bootstrap'; // Import LinkContainer for routing
 
 export default function Navbarcomponent() {
@@ -16,24 +17,18 @@ export default function Navbarcomponent() {
                     <Nav className="me-auto">
                         <Nav.Link href="#action1">Home</Nav.Link>
                         <Nav.Link href="#action2">About</Nav.Link>
-                        {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
-                            <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action5">Something else here</NavDropdown.Item>
-                        </NavDropdown> */}
                     </Nav>
 
                     {/* Centered Search Form */}
-                    {/* <Form className="d-flex mx-auto" style={{ flexGrow: 1, maxWidth: '500px' }}>
+                    <Form className="d-flex mx-auto" style={{ flexGrow: 1, maxWidth: '500px',justifyContent:'center' }}>
                         <Form.Control
                             type="search"
                             placeholder="Search"
                             className="me-2"
                             aria-label="Search"
                         />
-                        <Button variant="outline-success">Search</Button>
-                    </Form> */}
+                        <Button variant="outline-success" >Search</Button>
+                    </Form>
 
                     <Nav className="ms-auto">
                         <LinkContainer to="/login">
@@ -41,6 +36,9 @@ export default function Navbarcomponent() {
                         </LinkContainer>
                         <LinkContainer to="/signup">
                             <Nav.Link>SignUp</Nav.Link>
+                        </LinkContainer>
+                        <LinkContainer to="/jobhost">
+                            <Nav.Link>Job Host</Nav.Link>
                         </LinkContainer>
                     </Nav>
                 </Navbar.Collapse>
