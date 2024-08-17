@@ -2,17 +2,22 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 import '../signup.css'; // Import custom styles
+import { useNavigate } from 'react-router-dom';
 
 export default function SignUp() {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate=useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log({ username, email, password });
         axios.post('http://localhost:3001/users/signup', { username, email, password })
-            .then(response => console.log('Response:', response.data))
+            .then(response =>{ console.log('Response:', response.data)
+                navigate('/login');
+            }
+        )
             .catch(error => {
                 if (error.response) {
                     console.error('Error response data:', error.response.data);

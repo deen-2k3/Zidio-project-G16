@@ -9,7 +9,7 @@ router.post('/hosts', hostController.createHost);
 router.get('/hosts', hostController.getHosts);
 
 // Route to get a single host by ID
-router.get('/hosts/:id', hostController.getHostsById);
+router.get('/hosts/:id', hostController.getHostById);
 
 // Route to update a host by ID
 router.put('/hosts/:id', hostController.updateHost);
