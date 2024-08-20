@@ -4,6 +4,7 @@ import SignUp from './pages/SignUp';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './layouts/Home';
 import JobHost from './pages/JobHost';
+import JobApply from './pages/JobApply';
 
 function App() {
     return (
@@ -13,8 +14,10 @@ function App() {
                 <Route path='/login' element={<Login />} />
                 <Route path='/signup' element={<SignUp />} />
                 <Route path='/jobhost' element={<JobHost />} />
+                <Route path='jobapply'element={<JobApply/>}/>
             </Routes>
         </BrowserRouter>
+        
        
     );
 }

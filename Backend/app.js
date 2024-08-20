@@ -27,4 +27,4 @@ mongoose.connect('mongodb://127.0.0.1:27017/JobPortal', {
 // Use the user routes
 app.use('/users', userRoutes);
 app.use('/host', hostRoutes);
-app.use('/jobapplies',jobApplyRoutes);
+app.use('/jobapply',jobApplyRoutes);
