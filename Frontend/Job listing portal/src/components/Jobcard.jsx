@@ -2,6 +2,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 import '../Jobcard.css'; // Import the CSS file
 
 export default function JobCard({ job }) {
@@ -24,7 +25,9 @@ export default function JobCard({ job }) {
         <ListGroup.Item className="list-group-item">CTC: {job.ctc}</ListGroup.Item>
       </ListGroup>
       <Card.Body className="card-body">
-        <Button variant="primary" href="#">Apply Now</Button>
+        <Link to="/jobapply">
+          <Button variant="primary">Apply Now</Button>
+        </Link>
       </Card.Body>
     </Card>
   );
